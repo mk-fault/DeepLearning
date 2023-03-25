@@ -1,0 +1,5 @@
+# Project exclude paths
+/data/DRIVE/
+/data/flower_data/
+/data/VOCdevkit/
+/source/
