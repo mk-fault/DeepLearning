@@ -21,7 +21,7 @@ def main(args):
     if os.path.exists("./weights") is False:
         os.makedirs("./weights")
 
-    tb_writer = SummaryWriter()
+    tb_writer = SummaryWriter(log_dir='./logs')
 
     train_images_path, train_images_label, val_images_path, val_images_label = read_split_data(args.data_path)
 
@@ -128,7 +128,7 @@ if __name__ == '__main__':
                         default="../../data/flower_data/flower_photos")
     parser.add_argument('--model-name', default='', help='create model name')
 
-    # 预训练权重路径，如果不想载入就设置为空字符
+    # 预训练权重路径，空字符表示不适用预训练权重
     parser.add_argument('--weights', type=str, default='./vit_base_patch16_224_in21k.pth',
                         help='initial weights path')
     # 是否冻结权重

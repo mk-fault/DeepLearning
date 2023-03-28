@@ -205,6 +205,7 @@ class VisionTransformer(nn.Module):
             for i in range(depth)
         ])
 
+
         self.norm = norm_layer(self.dim)
 
         # 分类头
